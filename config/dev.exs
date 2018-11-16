@@ -52,7 +52,7 @@ config :phoenix, :stacktrace_depth, 20
 config :board_nerd, BoardNerd.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   database: "board_nerd_dev",
   hostname: "localhost",
   pool_size: 10
