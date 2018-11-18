@@ -21,7 +21,7 @@ defmodule BoardNerdWeb.Router do
     get "/register", UserController, :new
     resources("/sessions", SessionController, only: [:create])
     get "/login", SessionController, :new
-    delete "/logout", SessionController, :delete
+    get "/logout", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.

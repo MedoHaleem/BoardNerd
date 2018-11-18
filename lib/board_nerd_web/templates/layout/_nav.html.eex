@@ -4,7 +4,12 @@
       <a class="navbar-brand" href="/">BoardNerd</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/login">Login</a></li>
+    <%= if logged_in?(@conn) do %>
+        <li><a><%= get_username(@conn) %></a></li>
+        <li><a href="/logout">Logout</a></li>
+      <% else %>
+        <li><a href="/login">Login</a></li>
+      <% end %>
     </ul>
   </div>
 </nav>
