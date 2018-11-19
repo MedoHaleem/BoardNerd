@@ -7,7 +7,7 @@ defmodule BoardNerd.Mixfile do
       version: "0.0.1",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      compilers: [:phoenix, :gettext, :elixir_make] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
       deps: deps()
@@ -20,7 +20,7 @@ defmodule BoardNerd.Mixfile do
   def application do
     [
       mod: {BoardNerd.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ueberauth, :ueberauth_google, :ueberauth_twitter]
     ]
   end
 
@@ -42,8 +42,12 @@ defmodule BoardNerd.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:plug_cowboy, "~> 1.0"},
+      {:elixir_make, "~> 0.4", runtime: false},
       {:bcrypt_elixir, "~> 1.1"},
-      {:comeonin, "~> 4.1"}
+      {:comeonin, "~> 4.1"},
+      {:oauth, github: "tim/erlang-oauth"},
+      {:ueberauth, "~> 0.5.0"},
+      {:ueberauth_google, "~> 0.7"}
     ]
   end
 

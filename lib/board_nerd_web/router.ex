@@ -24,6 +24,10 @@ defmodule BoardNerdWeb.Router do
     get "/logout", SessionController, :delete
   end
 
+  scope "/auth", BoardNerdWeb do
+    get "/:provider/callback", SessionController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", BoardNerdWeb do
   #   pipe_through :api

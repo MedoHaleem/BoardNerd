@@ -14,14 +14,22 @@ config :board_nerd, BoardNerdWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "pRWtWljpnJzXN0v0PnmHdT1apu7mLT2ZDrHzkZECHdkDuC6uYENKV8g8WX54wYFk",
   render_errors: [view: BoardNerdWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: BoardNerd.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: BoardNerd.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
+config :ueberauth, Ueberauth,
+  providers: [
+    twitter: {Ueberauth.Strategy.Google, []}
+  ]
+
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  consumer_key:  Application.get_env(:board_nerd, :google_api_key),
+  consumer_secret:  Application.get_env(:my_app, :google_api_secert)
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
