@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :board_nerd, BoardNerd.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   database: "board_nerd_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

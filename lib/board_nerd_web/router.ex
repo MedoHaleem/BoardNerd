@@ -24,8 +24,9 @@ defmodule BoardNerdWeb.Router do
     get "/logout", SessionController, :delete
   end
 
-  scope "/auth", BoardNerdWeb do
-    get "/:provider/callback", SessionController, :callback
+  scope "/admin", BoardNerdWeb do
+    resources "/categories", CategoryController, only: [:new, :create]
+    resources "/products", ProductController, only: [:new, :create]
   end
 
   # Other scopes may use custom stacks.
