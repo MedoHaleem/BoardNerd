@@ -31,15 +31,4 @@ defmodule BoardNerdWeb.SessionController do
     Comeonin.Bcrypt.check_pass(user, password)
   end
 
-  defp build_user_from_auth(%{provider: :google}=auth) do
-    password = random_string(64)
-    %{
-      username: auth.info.email,
-      email: auth.info.email,
-      oauth_id: auth.uid,
-      oauth_provider: "google",
-      password: password,
-      password_confirmation: password
-    }
-  end
 end
