@@ -1,25 +1,11 @@
-alias BoardNerd.Repo
-alias BoardNerd.Accounts
-alias BoardNerd.Accounts.User
-
-Repo.delete_all(User)
-
-user_attrs = %{
-  username: "test",
-  email: "testuser@test.local",
-  active: true,
-  password: "password",
-  password_confirmation: "password"
-}
-
-user =
-  case Accounts.create_user(user_attrs) do
-    {:ok, user} ->
-      IO.puts("User created successfully!")
-      user
-
-    {:error, changeset} ->
-      IO.puts("Failed to create user account!")
-      IO.inspect(changeset)
-      nil
-  end
+# Script for populating the database. You can run it as:
+#
+#     mix run priv/repo/seeds.exs
+#
+# Inside the script, you can read and write to any of your
+# repositories directly:
+#
+#     BoardNerd.Repo.insert!(%BoardNerd.SomeSchema{})
+#
+# We recommend using the bang functions (`insert!`, `update!`
+# and so on) as they will fail if something goes wrong.
