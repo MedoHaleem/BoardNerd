@@ -22,9 +22,13 @@ defmodule BoardNerdWeb.Router do
     resources("/sessions", SessionController, only: [:create])
     get "/login", SessionController, :new
     get "/logout", SessionController, :delete
+    resources "/products", ProductController, only: [:show]
   end
 
+
   scope "/admin", BoardNerdWeb do
+    pipe_through :browser
+
     resources "/categories", CategoryController, only: [:new, :create]
     resources "/products", ProductController, only: [:new, :create]
   end

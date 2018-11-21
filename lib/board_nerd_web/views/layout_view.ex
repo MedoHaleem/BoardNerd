@@ -11,7 +11,7 @@ defmodule BoardNerdWeb.LayoutView do
   def logged_in?(conn) do
     case Plug.Conn.get_session(conn, :user) do
       nil -> false
-      user -> true
+      _user -> true
     end
   end
 end

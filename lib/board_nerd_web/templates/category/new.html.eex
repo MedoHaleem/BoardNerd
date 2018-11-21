@@ -1,0 +1,3 @@
+<h2>Create new Category</h2>
+<hr />
+<%= render("form.html", %{category: @category, conn: @conn}) %>
