@@ -1,0 +1,5 @@
+ <div class="col-md-5 column productbox">
+    <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" class="img-responsive">
+    <div class="producttitle"><%= @product.name %></div>
+    <div class="productprice"><div class="pull-right"><a href="/products/<%= @product.id %>" class="btn btn-danger btn-sm" role="button">BUY</a></div><div class="pricetext">$<%= @product.price %></div></div>
+</div>

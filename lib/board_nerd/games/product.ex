@@ -17,7 +17,7 @@ defmodule BoardNerd.Games.Product do
   @doc false
   def changeset(product, attrs) do
     product
-    |> cast(attrs, [:name, :price, :quantity, :description])
-    |> validate_required([:name, :price, :quantity, :description])
+    |> cast(attrs, [:name, :price, :quantity, :description, :category_id])
+    |> validate_required([:name, :price, :quantity, :description, :category_id])
   end
 end

@@ -30,7 +30,7 @@ defmodule BoardNerdWeb.Router do
   scope "/admin", BoardNerdWeb do
     pipe_through :browser
 
-    resources "/categories", CategoryController, only: [:new, :create]
+    resources "/categories", Admin.CategoryController, only: [:new, :create]
     resources "/products", ProductController, only: [:new, :create]
   end
 

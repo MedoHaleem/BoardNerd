@@ -4,4 +4,3 @@
 <%= for product <- @products do %>
   <%= render("_product.html", %{ product: product, conn: @conn }) %>
 <% end %>
-</div>
