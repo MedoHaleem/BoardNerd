@@ -23,6 +23,7 @@ defmodule BoardNerdWeb.Router do
     get "/login", SessionController, :new
     get "/logout", SessionController, :delete
     resources "/products", ProductController, only: [:show]
+    resources "/categories", CategoryController, only: [:show]
   end
 
 

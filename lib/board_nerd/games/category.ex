@@ -4,9 +4,9 @@ defmodule BoardNerd.Games.Category do
   alias BoardNerd.Games.Product
 
   schema "categories" do
-    field :name, :string
+    field(:name, :string)
 
-    has_many :product, Product
+    has_many(:products, Product)
 
     timestamps()
   end

@@ -11,6 +11,15 @@
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
       <% end %>
+      <div class="dropdown"><li>
+  <button class="dropbtn">Categories</button>
+  <div class="dropdown-content">
+ <%= for key <- get_categories() do %>
+    <a href="/categories/<%= key.id %>"><%= key.name %></a>
+  <% end %>
+      </div>
+    </li>
+    </div>
     </ul>
   </div>
 </nav>

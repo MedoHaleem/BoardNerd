@@ -121,7 +121,8 @@ defmodule BoardNerd.Games do
       ** (Ecto.NoResultsError)
 
   """
-  def get_category!(id), do: Repo.get!(Category, id)
+  def get_category!(id), do: Repo.get!(Category, id) |> Repo.preload(:products)
+  def get_category_by_name!(name), do: Repo.get!(Category, name)
 
   @doc """
   Creates a category.

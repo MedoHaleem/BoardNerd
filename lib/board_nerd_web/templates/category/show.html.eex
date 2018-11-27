@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h2><%= gettext "%{name}! Games", name: @category.name %></h2>
+<div>
+<%= for product <- @products do %>
+  <%= render("_product.html", %{ product: product, conn: @conn }) %>
+<% end %>
+</div>
