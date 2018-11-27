@@ -31,7 +31,7 @@ defmodule BoardNerdWeb.Router do
     pipe_through :browser
 
     resources "/categories", Admin.CategoryController, only: [:new, :create]
-    resources "/products", ProductController, only: [:new, :create]
+    resources "/products", Admin.ProductController, only: [:new, :create]
   end
 
   # Other scopes may use custom stacks.
