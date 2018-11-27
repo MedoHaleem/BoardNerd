@@ -13,15 +13,19 @@ is sample project used to solidify my experience in Elixir, the project is E-Com
 
 Project phases:
 
+- [x] means it is done.
+- [-] means it is currently in progress.
+- [ ] means it is planned but not implmented.
+
 ***Phase 1:***
 
 - [x] User should be able to login/register/logout
 - [x] User should be able to see products and browse by category
-- [] User should be able to create game sessions
-- [] Game sessions must have address, date, time, game type
-- [] Admin should be able to create/update/delete category
-- [] Admin should be able to create/update delete products
-- [] User shouldn't be able to access Admin CRUD operation if not admin
+- [ ] User should be able to create game sessions
+- [ ] Game sessions must have address, date, time, game type
+- [ ] Admin should be able to create/update/delete category
+- [ ] Admin should be able to create/update delete products
+- [ ] User shouldn't be able to access Admin CRUD operation if not admin
 
 
 To start your Phoenix server:
